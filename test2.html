@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calessa e-Class: Ari</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to bottom right, #fdf6e3, #ffe4b5);
+      display: flex;
+      height: 100vh;
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #fff0d6;
+      padding: 20px;
+      box-shadow: 2px 0 10px rgba(255, 180, 100, 0.3);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pfp {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 5px rgba(255, 100, 100, 0.4);
+    }
+
+    .username {
+      font-weight: bold;
+      color: #d2691e;
+      background-color: #ffebcd;
+      padding: 5px 10px;
+      border-radius: 12px;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: #8b4513;
+      font-size: 1em;
+      padding: 8px 12px;
+      border-radius: 8px;
+      background-color: #fffaf0;
+      box-shadow: 0 0 5px rgba(255, 200, 150, 0.3);
+    }
+
+    .nav-link:hover {
+      background-color: #ffe4b5;
+    }
+
+    .main {
+      flex-grow: 1;
+      padding: 30px;
+      overflow-y: auto;
+    }
+
+    .greeting {
+      font-size: 1.4em;
+      color: #ff8c00;
+      margin-bottom: 20px;
+    }
+
+    .scroll {
+      background-color: #fffaf0;
+      border: 2px dashed #ffa07a;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(255, 200, 150, 0.5);
+      font-size: 1em;
+      color: #8b4513;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      font-size: 1em;
+      color: #d2691e;
+      background-color: #fff0d6;
+      padding: 10px 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(255, 180, 100, 0.4);
+    }
+
+    .back-link:hover {
+      background-color: #ffe4b5;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="profile">
+      <img src="../pfps/ari.png" alt="Ari's profile picture" class="pfp" />
+      <span class="username">@ari</span>
+    </div>
+    <a href="#" class="nav-link">📚 My Lessons</a>
+    <a href="#" class="nav-link">💌 Messages</a>
+    <a href="#" class="nav-link">🎨 Activities</a>
+    <a href="../courtyard.html" class="nav-link">🏠 Courtyard</a>
+  </div>
+
+  <div class="main">
+    <div class="greeting">🧸 Hello Ari! Your scroll has opened.</div>
+    <div class="scroll">
+      <h2>📜 Today’s Scroll</h2>
+      <p>Welcome to your classroom, Ari. Today we’ll explore colors, shapes, and gentle stories. Your mascot, Pompom the Bear, is waiting by the reading rug. Don’t forget to check the sparkle box for your morning surprise!</p>
+    </div>
+    <a href="../courtyard.html" class="back-link">← Return to the Courtyard</a>
+  </div>
+</body>
+</html>

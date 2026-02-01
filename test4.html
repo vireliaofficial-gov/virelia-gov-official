@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Calessa Citizen ID — Danae Argyrou</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    @page { size: A4; margin: 20mm; }
+    @media print {
+      .sheet { box-shadow: none; }
+      .actions { display: none; }
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: #f3f4f6;
+      color: #0f172a;
+      margin: 0;
+      padding: 0;
+    }
+    .sheet {
+      width: 210mm;
+      margin: 0 auto;
+      padding: 10mm;
+      box-sizing: border-box;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12mm;
+      align-items: start;
+    }
+    .card {
+      width: 86mm;
+      height: 54mm;
+      border-radius: 6mm;
+      background: white;
+      border: 0.6mm solid #cbd5e1;
+      box-shadow: 0 2mm 6mm rgba(15,23,42,0.12);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .band {
+      background: linear-gradient(135deg, #ef4444 0%, #f59e0b 60%, #fde047 100%);
+      height: 10mm;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4mm;
+      padding: 3mm 4mm 2mm;
+      border-bottom: 0.4mm dashed #e5e7eb;
+    }
+    .emblem {
+      width: 10mm;
+      height: 10mm;
+      border-radius: 50%;
+      background:
+        radial-gradient(closest-side, #fde68a 0 40%, transparent 41%),
+        conic-gradient(from 270deg, #fcd34d, #f59e0b, #ef4444, #f59e0b, #fcd34d);
+      border: 0.4mm solid #f59e0b;
+      box-shadow: inset 0 0 2mm rgba(0,0,0,0.15);
+    }
+    .title {
+      font-weight: 700;
+      font-size: 3.6mm;
+      line-height: 1.1;
+    }
+    .subtitle {
+      font-size: 2.8mm;
+      color: #334155;
+    }
+
+.content {
+  display: flex;              /* horizontal layout */
+  align-items: flex-start;    /* align photo and text at the top */
+  gap: 6mm;                   /* space between photo and text */
+  padding: 3mm 4mm;
+  font-size: 2.4mm;           /* slightly smaller text so it fits */
+  line-height: 1.2;
+}
+.photo {
+  flex: 0 0 auto;             /* photo keeps its size */
+}
+.text-block {
+  flex: 1;                    /* text takes the remaining space */
+  word-wrap: break-word;
+  white-space: normal;
+}
+.photo img {
+  width: 14mm;
+  height: 18mm;
+  object-fit: cover;
+  border: 0.4mm solid #cbd5e1;
+  border-radius: 2mm;
+  background: #e2e8f0;
+}
+
+
+
+  .label {
+  font-weight: 600;
+  color: #0f172a;
+  font-size: 2.2mm;   /* match value size */
+}
+    .value {
+  color: #334155;
+  font-size: 2.2mm;   /* match label size */
+}
+
+
+    .footer {
+      padding: 2mm 4mm 3mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 0.4mm dashed #e5e7eb;
+    }
+    .ceremonial {
+      font-family: "Consolas","SFMono-Regular", monospace;
+      font-size: 2.4mm;
+      letter-spacing: 0.2mm;
+      color: #0f172a;
+      font-weight: 700;
+    }
+    .mark {
+      display: inline-grid;
+      grid-auto-flow: column;
+      gap: 0.6mm;
+    }
+    .bar {
+      width: 1.4mm;
+      height: 6mm;
+      background: #0f172a;
+      opacity: 0.75;
+    }
+
+    .back .content {
+  flex-direction: column;
+  font-size: 2.4mm;      /* smaller text */
+  line-height: 1.2;      /* tighter line spacing */
+  gap: 1mm;              /* small gap between items */
+  padding: 3mm 4mm;
+}
+.back .content .full {
+  margin: 0;             /* remove default margins */
+}
+.note {
+  font-size: 2.2mm;
+  line-height: 1.2;
+  margin-top: 1mm;
+}
+
+
+    .guides {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .guides:before {
+      content: "";
+      position: absolute;
+      border: 0.2mm dashed #94a3b8;
+      width: calc(100% - 2mm);
+      height: calc(100% - 2mm);
+      left: 1mm;
+      top: 1mm;
+      border-radius: 6mm;
+    }
+
+    .watermark {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      pointer-events: none;
+      opacity: 0.08;
+    }
+    .watermark img {
+      max-width: 70%;
+      max-height: 70%;
+    }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="actions" style="margin-bottom:8mm; text-align:center;">
+      <button onclick="window.print()" style="
+        background:#0f172a;color:#fff;border:none;border-radius:6px;
+        padding:10px 14px;font-size:14px;cursor:pointer;">Print ID</button>
+    </div>
+
+    <div class="card-grid">
+      <!-- Front side -->
+      <section class="card front" aria-label="Danae Argyrou ID — front">
+        <div class="band"></div>
+        <div class="header">
+          <div class="emblem" title="House of the Almond Flame"></div>
+          <div>
+            <div class="title">Calessa Citizen Identification</div>
+            <div class="subtitle">House of the Almond Flame</div>
+          </div>
+        </div>
+
+        <div class="watermark">
+          <img src="emblem-logo.png" alt="House emblem watermark" />
+        </div>
+
+        <div class="content">
+          <div class="photo">
+            <img src="Individuals/Photo/ArgyrouDanae.jpg" alt="Citizen photo" />
+          </div>
+
+          <div class="text-block">
+            <div><span class="label">Name:</span> <span class="value">Danae Argyrou</span></div>
+            <div><span class="label">Ceremonial ID:</span> <span class="value">CAL-DA-0007</span></div>
+            <div><span class="label">DOB:</span> <span class="value">21 January 1986</span></div>
+            <div><span class="label">Gender:</span> <span class="value">Female</span></div>
+            <div><span class="label">Occupation:</span> <span class="value">Teacher</span></div>
+            <div><span class="label">Ministry:</span> <span class="value">Education</span></div>
+            <div><span class="label">Address:</span> <span class="value">33 Almond Vale, Western Quarter, Calessa 11627</span></div>
+            <div><span class="label">Postal Code:</span> <span class="value">CL-45100</span></div>
+            <div><span class="label">Status:</span> <span class="value">Adult Resident</span></div>
+            <div><span class="label">Email:</span> <span class="value">DanaeArgyrou@pmail.com</span></div>
+            <div><span class="label">Phone:</span> <span class="value">+77 539 725 3134</span></div>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="ceremonial">CAL-DA-0007</div>
+          <div class="mark">
+            <span class="bar" style="height:5mm; opacity:.35;"></span>
+            <span class="bar"></span>
+            <span class="bar" style="height:4mm;"></span>
+            <span class="bar" style="opacity:.55;"></span>
+            <span class="bar" style="height:5.5mm;"></span>
+          </div>
+        </div>
+
+        <div class="guides"></div>
+      </section>
+
+      <!-- Back side -->
+      <section class="card back" aria-label="Danae Argyrou ID — back">
+        <div class="band"></div>
+                <div class="content">
+          <div class="full">
+            <span class="label">Linked household:</span>
+            <span class="value">Argyrou Family Scroll</span>
+          </div>
+
+          <div class="full">
+            <span class="label">Emblem affiliation:</span>
+            <span class="value">House of the Almond Flame</span>
+          </div>
+
+          <div class="full">
+            <span class="label">Contact (summary):</span>
+            <span class="value">Email: DanaeArgyrou@pmail.com — Phone: +77 539 725 3134</span>
+          </div>
+
+          <div class="full note">
+            This card affirms residency and ministry alignment within Calessa.
+            For ceremonial use and record verification.
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="ceremonial">CAL-DA-0007</div>
+          <div class="mark" aria-hidden="true">
+            <span class="bar" style="height:5mm; opacity:.35;"></span>
+            <span class="bar"></span>
+            <span class="bar" style="height:4mm;"></span>
+            <span class="bar" style="opacity:.55;"></span>
+            <span class="bar" style="height:5.5mm;"></span>
+          </div>
+        </div>
+
+        <div class="guides"></div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

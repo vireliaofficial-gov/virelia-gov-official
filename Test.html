@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prysmor Search</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f0f4f8;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: relative;
+    }
+
+    .banner {
+      height: 50px;
+      width: 200px;
+      background-color: #ddd;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+    }
+
+    .user img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .user-name {
+      cursor: pointer;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .dropdown, .menu-options {
+      position: absolute;
+      top: 45px;
+      right: 0;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: none;
+      z-index: 10;
+    }
+
+    .dropdown a, .menu-options a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .dropdown a:hover, .menu-options a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .menu {
+      position: relative;
+    }
+
+    .menu button {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 80px);
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .menu-grid a {
+      display: block;
+      width: 80px;
+      height: 80px;
+      background-color: #eee;
+      border-radius: 8px;
+      text-align: center;
+      line-height: 80px;
+      font-size: 12px;
+      color: #555;
+      text-decoration: none;
+    }
+
+    main {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+
+    input {
+      padding: 12px;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button.search-btn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #0078d7;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button.search-btn:hover {
+      background-color: #005ea0;
+    }
+
+    .results {
+      margin-top: 30px;
+      text-align: left;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .result {
+      background: #fff;
+      padding: 15px 20px;
+      margin-bottom: 12px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .result h3 {
+      margin: 0 0 5px;
+      font-size: 18px;
+    }
+
+    .result a {
+      text-decoration: none;
+      color: #0078d7;
+    }
+
+    .result p {
+      margin: 0;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="banner">[ Prysmor Banner Placeholder ]</div>
+
+    <div style="display: flex; gap: 20px;">
+      <div class="user" onclick="toggleDropdown('accountDropdown')">
+        <img src="https://via.placeholder.com/32" alt="PFP">
+        <div class="user-name">Username</div>
+        <div class="dropdown" id="accountDropdown">
+          <a href="#">Profile</a>
+          <a href="#">Settings</a>
+          <a href="#">Log out</a>
+        </div>
+      </div>
+
+      <div class="menu" onclick="toggleDropdown('menuOptions')">
+        <button>⋯</button>
+        <div class="menu-options" id="menuOptions">
+          <div class="menu-grid">
+            <a href="#">App 1</a>
+            <a href="#">App 2</a>
+            <a href="#">App 3</a>
+            <a href="#">App 4</a>
+            <a href="#">App 5</a>
+            <a href="#">App 6</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <input type="text" id="query" placeholder="Search Prysmor..." onkeypress="handleKey(event)">
+    <button class="search-btn" onclick="search()">Search</button>
+
+    <div class="results" id="results"></div>
+  </main>
+
+  <script>
+    function toggleDropdown(id) {
+      const dropdowns = ['accountDropdown', 'menuOptions'];
+      dropdowns.forEach(d => {
+        if (d !== id) document.getElementById(d).style.display = 'none';
+      });
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.user') && !e.target.closest('.menu')) {
+        document.getElementById('accountDropdown').style.display = 'none';
+        document.getElementById('menuOptions').style.display = 'none';
+      }
+    });
+
+    async function search() {
+      const query = document.getElementById("query").value.trim();
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.innerHTML = "";
+
+      if (!query) return;
+
+      const url = `https://api.duckduckgo.com/?q=${encodeURIComponent(query)}&format=json&no_redirect=1&no_html=1`;
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (data.RelatedTopics && data.RelatedTopics.length > 0) {
+          data.RelatedTopics.forEach(topic => {
+            if (topic.Text && topic.FirstURL) {
+              const result = document.createElement("div");
+              result.className = "result";
+              result.innerHTML = `
+                <h3><a href="${topic.FirstURL}" target="_blank">${topic.Text}</a></h3>
+                <p>${topic.FirstURL}</p>
+              `;
+              resultsDiv.appendChild(result);
+            }
+          });
+        } else {
+          resultsDiv.innerHTML = "<p>No results found.</p>";
+        }
+      } catch (error) {
+        resultsDiv.innerHTML = "<p>Error fetching results.</p>";
+        console.error(error);
+      }
+    }
+
+    function handleKey(event) {
+      if (event.key === "Enter") {
+        search();
+      }
+    }
+  </script>
+</body>
+</html>

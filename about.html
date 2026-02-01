@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About us</title>
+  <style>
+    body {
+      background-color: lightyellow;
+      color: black;
+      padding: 20px;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: #28282b;
+      overflow: hidden;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      color: rgb(255, 255, 255);
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #111;
+    }
+
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #00ffcc;
+      color: #000;
+      border: none;
+      padding: 10px 15px;
+      font-weight: bold;
+      font-family: 'Courier New', monospace;
+      cursor: pointer;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #00ffcc;
+      transition: opacity 0.3s ease;
+      opacity: 0;
+      z-index: 999;
+    }
+
+    #backToTop.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <h2><center>About us</center></h2>
+  <hr color="black" width="20%"> <br>
+
+  <!-- Navigation Bar -->
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="News.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="Login.html">Login</a></li>
+    <li><a href="Other/OtherMinistries.html">Other Ministries</a></li>
+  </ul>
+  <br>
+
+      <center><u>About Calessa</u> </center><br>
+Founded: 1947 <br>
+Current Government: AQua Chandrinos Administration (since 2023) <br>
+
+<center> <u>Origins and Founding Vision (1947–1960s)</u></center><br>
+Calessa was officially founded in 1947, in the wake of global reconstruction and renewed hope. Conceived as a sovereign city state built on unity, resilience, and architectural harmony, Calessa emerged from the blueprints of dreamers — engineers, artists, and diplomats who envisioned a place where civic identity would be as strong as its skyline.<br>
+
+The city’s emblem, a stylized blue seal featuring towers, bridges, and laurel wreaths, was adopted in 1951 to symbolize strength through structure and peace through progress. Early infrastructure focused on education, public transport, and cultural preservation, with the Ministry of Archives still housing original founding documents and miniature models from the 1950s. <br>
+
+<center> <u>Expansion and Identity (1970s–1990s)</u></center>
+Through the 1970s and 80s, Calessa expanded beyond its central district, developing satellite boroughs like Virella, North Spire, and Port Techné. Each zone contributed to the city’s growing identity, Virella became known for its diplomatic academies, while Port Techné led innovation in miniature maritime logistics.<br>
+
+Calessa’s unique status as a city country allowed it to establish its own ministries, currency (the Caleon), and international treaties with neighboring playmobil territories. By 1994, Calessa was recognized as a model of micro governance, blending ceremonial tradition with modern urban planning.<br>
+
+<center><u>The Quiet Shift and Rebuilding (2000s–2020s)</u></center>
+The early 2000s brought quiet challenges: population shifts, aging infrastructure, and a growing need for digital modernization. The city’s iconic blue towers remained untouched, but beneath them, systems needed renewal. A series of interim governments maintained stability, but lacked the vision to reawaken Calessa’s founding spirit.<br>
+
+That changed in 2023, when AQua Chandrinos was elected as Head of Government. A former urban strategist and cultural archivist, Chandrinos brought both technical precision and poetic clarity to the role. His administration launched the Blue Renewal Initiative, a sweeping plan to restore Calessa’s infrastructure, digitize public services, and reintroduce civic rituals that honor the city’s symbolic roots.<br>
+<center><u>🇪🇺 Entry into Europe (2024)</u></center>
+In a landmark moment for the city, Calessa was formally admitted into the European Union in 2024 as a recognized micro-member with cultural and diplomatic privileges. The move solidified Calessa’s role as a bridge between miniature governance and continental cooperation. The Treaty of Virella, signed in the city’s diplomatic quarter, outlined Calessa’s contributions to cultural exchange, urban innovation, and symbolic diplomacy.<br>
+
+Since joining Europe, Calessa has hosted miniature summits, contributed to regional sustainability projects, and established the Ministry of Continental Affairs, which oversees integration efforts and cross-border partnerships.<br> <center><img src="photo/Logo3.png" width="100" height="60"></center>
+
+<center><u>Calessa Today: Under the AQua Chandrinos Administration</u></center>
+Under Chandrinos, Calessa has entered a new era of intentional growth and emotional governance. Key achievements include:<br>
+
+The Ministry of Rituals and Recovery, which transforms everyday acts (meals, walks, journaling) into civic rituals for grounding and unity.<br>
+
+The Techné Vaults, a subterranean archive of experimental architecture and containment lore, open to public tours and educational programs.<br>
+
+The Blue Grid Project, which maps every district’s emotional and structural pulse, guiding urban decisions through both data and story.<br>
+
+The Calessa Emblem Restoration Act, which ensures every public building bears the city’s seal in blue, a reminder of shared identity.<br>
+
+Calessa remains a sovereign city state, proud of its miniature scale and monumental heart. Whether you walk its bridges, study its archives, or simply sit beneath its spires, you are part of a legacy that began in 1947 and continues, with clarity, care, and a touch of myth, today.<br>
+<center><img src="photo/Logo2.png" width="200" height="300"></center>
+<hr color="black">
+<br> <center><img src="photo/Logo1.png" width="200" height="200"> </center>
+  <!-- Back to Top Button -->
+  <button id="backToTop" onclick="scrollToTop()">↑ Top</button>
+
+  <script>
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.addEventListener("scroll", function () {
+      const button = document.getElementById("backToTop");
+      if (window.scrollY > 300) {
+        button.classList.add("show");
+      } else {
+        button.classList.remove("show");
+      }
+    });
+  </script>
+
+</body>
+</html>

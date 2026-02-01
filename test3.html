@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dollar Bill Layout</title>
+<style>
+  body {
+    background: #e5e7eb;
+    font-family: "Georgia", serif;
+  }
+  .bill {
+    width: 600px;
+    height: 260px;
+    /* faded gradient background */
+    background: linear-gradient(135deg, #d9ead3 0%, #b6a9b2 100%);
+    border: 8px solid #2f4f4f;
+    border-radius: 12px;
+    margin: 40px auto;
+    position: relative;
+    box-shadow: 0 0 12px rgba(0,0,0,0.3);
+    background-image: 
+    linear-gradient(135deg, rgba(217,234,211,0.8) 0%, rgba(182,169,178,0.8) 100%),
+    url("photo/banknote.jpg");
+  }
+  .corner.br {
+    position: absolute;
+    bottom: 12px;
+    right: 16px;
+    font-size: 60px;   /* bigger denomination */
+    font-weight: bold;
+    color: #2f4f4f;
+    opacity: 0.85;
+  }
+  .portrait {
+    width: 120px;
+    height: 160px;
+    border: 4px solid #7567e3;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+    opacity: 0.4;
+  }
+  .portrait img {
+    width: 120%;
+    height: 110%;
+    object-fit: cover;
+  }
+  .center-text {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #2f4f4f;
+  }
+  .series {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #374151;
+  }
+  .emblem {
+    width: 80px;
+    height: 80px;
+    border: 4px solid #2f4f4f;
+    border-radius: 50%;
+    position: absolute;
+    left: 100px;
+    top: 90px;
+    overflow: hidden;
+    opacity: 0.3; /* faded look */
+  }
+  .emblem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+</head>
+<body>
+  <div class="bill">
+    <!-- denomination only bottom right -->
+    <div class="corner br">Ͽ1</div>
+
+    <div class="center-text">Virellia</div>
+
+    <!-- portrait placeholder -->
+    <div class="portrait">
+      <img src="photo/Ͽ1portrait.jpg" alt="Portrait placeholder">
+    </div>
+
+    <!-- emblem placeholder -->
+    <div class="emblem">
+      <img src="photo/" alt="Emblem placeholder">
+    </div>
+
+    <div class="series">Series 2025</div>
+  </div>
+</body>
+</html>

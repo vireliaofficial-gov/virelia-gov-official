@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calessa Citizen Registry</title>
+  <style>
+    body {
+      background-color: lightyellow;
+      color: black;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    form {
+      background-color: #f5f5dc;
+      border: 2px solid #28282b;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 10px #28282b;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .required-star {
+      color: red;
+      margin-left: 4px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #888;
+      border-radius: 5px;
+      font-family: 'Courier New', monospace;
+    }
+
+    input[type="submit"] {
+      background-color: #00ffcc;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 0 5px #00ffcc;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #00ddaa;
+    }
+
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #00ffcc;
+      color: #000;
+      border: none;
+      padding: 10px 15px;
+      font-weight: bold;
+      font-family: 'Courier New', monospace;
+      cursor: pointer;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #00ffcc;
+      transition: opacity 0.3s ease;
+      opacity: 0;
+      z-index: 999;
+    }
+
+    #backToTop.show {
+      opacity: 1;
+    }
+
+    .disclaimer {
+      text-align: center;
+      font-size: 12px;
+      color: gray;
+      margin-top: 20px;
+    }
+
+    .note {
+      text-align: center;
+      font-size: 14px;
+      color: red;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Registry of Calessan Souls</h2>
+  <hr width="20%" color="black">
+  <p><center>Submit your ceremonial details to be woven into the archives.</center></p>
+
+  <div class="note">Fields marked with <span class="required-star">*</span> are compulsory.</div>
+
+  <form action="#" method="post" enctype="multipart/form-data">
+    <label for="name">Full Name<span class="required-star">*</span></label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="dob">Date of Birth<span class="required-star">*</span></label>
+    <input type="date" id="dob" name="dob" required>
+
+    <label for="origin">Place of Origin<span class="required-star">*</span></label>
+    <input type="text" id="origin" name="origin" required>
+
+    <label for="role">Ceremonial Role<span class="required-star">*</span></label>
+    <select id="role" name="role" required>
+      <option value="">-- Select Role --</option>
+      <option value="citizen">Citizen</option>
+      <option value="scribe">Scribe</option>
+      <option value="minister">Minister</option>
+      <option value="visitor">Visitor</option>
+    </select>
+
+    <label for="message">Message to the Ministry</label>
+    <textarea id="message" name="message" rows="4"></textarea>
+
+    <label for="Photo">Submit Your Photo<span class="required-star">*</span></label>
+    <input type="file" id="Photo" name="Photo" accept="image/*" required>
+
+    <input type="submit" value="Submit to the Archives">
+  </form>
+
+  <div class="disclaimer">
+    <i>This is a ceremonial RP form. No data is stored or transmitted.</i>
+  </div>
+
+  <center><img src="photo/Logo1.png" width="200" height="200" alt="Calessa Emblem"></center>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" onclick="scrollToTop()">↑ Top</button>
+
+  <script>
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.addEventListener("scroll", function () {
+      const button = document.getElementById("backToTop");
+      if (window.scrollY > 300) {
+        button.classList.add("show");
+      } else {
+        button.classList.remove("show");
+      }
+    });
+  </script>
+
+</body>
+</html>

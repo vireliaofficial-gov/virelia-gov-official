@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calessa Access Portal</title>
+  <!-- Font Awesome for eye icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #00ffcc;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      background-color: #111;
+      color: #00ffcc;
+      border: 1px solid #00ffcc;
+      padding: 10px;
+      margin: 5px;
+      width: 250px;
+      font-size: 16px;
+    }
+
+    .eye-icon {
+      position: absolute;
+      right: 10px;
+      top: 42%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #00ffcc;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    button {
+      background-color: #00ffcc;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    #error-message {
+      color: #ff4444;
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .return-button {
+      margin-top: 30px;
+    }
+
+    .return-button a {
+      text-decoration: none;
+      background-color: #111;
+      color: #00ffcc;
+      border: 1px solid #00ffcc;
+      padding: 10px 20px;
+      font-weight: bold;
+      display: inline-block;
+      box-shadow: 0 0 5px #00ffcc;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔒 Calessa Registry Terminal</h1>
+  <p>Enter Government ID and Access Code</p>
+
+  <input type="text" id="username" placeholder="Government ID"><br>
+
+  <div class="input-wrapper">
+    <input type="password" id="password" placeholder="Access Code">
+    <button class="eye-icon" onclick="togglePassword()" id="eyeToggle">
+      <i class="fa-solid fa-eye-slash"></i>
+    </button>
+  </div><br>
+
+  <button onclick="login()">Enter</button>
+
+  <div id="error-message">Access Denied: Invalid credentials.</div>
+
+  <div class="return-button">
+    <a href="index.html">← Return</a>
+  </div>
+
+  <script>
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      const errorMsg = document.getElementById("error-message");
+
+      if (user === "CalGOV" && pass === "Cal1947") {
+        window.location.href = "Citizen_info.html";
+      } else if (user === "Agreste.Gab" && pass === "Agreste1923") {
+        window.location.href = "families/Agreste.html";
+      } else if (user === "AngLitsa" && pass === "Litsagodess") {
+        window.location.href = "families/Angelidi.html";
+      } else if (user === "ArgyMar" && pass === "Marika123") {
+        window.location.href = "families/Argyrou1.html";
+      } else if (user === "ArgyrouAth" && pass === "Ath0985") {
+        window.location.href = "families/Argyrou2.html";
+      } else if (user === "PabloArg" && pass === "Pa.30584") {
+        window.location.href = "families/Argyrou3.html";
+      } else if (user === "DanaeArg" && pass === "ADanae86") {
+        window.location.href = "families/Argyrou4.html";
+      } else if (user === "ArsenCon1" && pass === "ConsArsen") {
+        window.location.href = "families/Arsenakou.html";
+      } else if (user === "AthanFam" && pass === "Athan85") {
+        window.location.href = "families/Athanasiou.html";
+      } else if (user === "BademKZ" && pass === "BademKnZ") {
+        window.location.href = "families/Badem.html";
+      } else if (user === "BourgeoisFam" && pass === "BrgsAAC") {
+        window.location.href = "families/Bourgeois.html";
+      } else if (user === "BoustCB" && pass === "BoustierC3lB4b") {
+        window.location.href = "families/Boustier.html";
+      } else if (user === "BrakakisHouse" && pass === "BrakaNMAM") {
+        window.location.href = "families/Brakakis.html";
+      } else if (user === "Bretakos1" && pass === "Brts123") {
+        window.location.href = "families/Bretakos.html";
+      } else if (user === "CesairesXD" && pass === "Cesaire2002") {
+        window.location.href = "families/Cesaire.html";
+      } else if (user === "ChamackND" && pass === "CHMCKNDEM") {
+        window.location.href = "families/Chamack.html";
+      } else if (user === "ChandrinosFAMi" && pass === "myrAQfam") {
+        window.location.href = "families/Chandrinos.html";
+      } else if (user === "ChangStats" && pass === "ShiYun110") {
+        window.location.href = "families/Chang.html";
+      } else if (user === "Couranfam89" && pass === "QueenE") {
+        window.location.href = "families/Couran1.html";
+      } else if (user === "CoufainShip" && pass === "Coufains.155") {
+        window.location.href = "families/Coufain.html";
+      } else if (user === "CouranPF" && pass === "PabloCfam") {
+        window.location.href = "families/Couran2.html";
+      } else if (user === "Damomend" && pass === "DamMend123") {
+        window.location.href = "families/Damocles mendeleive.html"; 
+      } else if (user === "Domshub" && pass === "DomsyToby1") {
+        window.location.href = "families/Domsalsky.html";
+      } else if (user === "FuWang" && pass === "Shell.on29") {
+        window.location.href = "families/Fu.html";
+      } else if (user === "Grigoriou.l" && pass === "grigo123") {
+        window.location.href = "families/Grigoriou.html";
+      } else if (user === "Hlepa.18" && pass === "hlepafrv12") {
+        window.location.href = "families/Hlepa.html";
+      } else if (user === "Horison" && pass === "Gurdus84") {
+        window.location.href = "families/Horison.html";
+      } else if (user === "Kapernaros" && pass === "KapIakov") {
+        window.location.href = "families/Kapernaros.html";
+        } else if (user === "LakeBR" && pass === "brbrlake88") {
+        window.location.href = "families/Lake.html";
+      } else if (user === "Makry.Demy" && pass === "Demy.00") {
+        window.location.href = "families/Makry.html";
+      } else if (user === "MarwoodISnJul" && pass === "JULnIS") {
+        window.location.href = "families/Marwood.html";
+      } else if (user === "Mpatsouvanie" && pass === "Mpats.991") {
+        window.location.href = "families/Mpatsouvanie.html";
+      } else if (user === "Nunez" && pass === "O.Nun.90") {
+        window.location.href = "families/Nunez.html";
+      } else if (user === "Palchack.MS" && pass === "Pachack.013") {
+        window.location.href = "families/Palchack.html";
+      } else if (user === "Papariz.E" && pass === "Elena.Pap2000") {
+        window.location.href = "families/Paparizou.html";
+      } else if (user === "Rossi.Fer" && pass === "Jul86Rossi") {
+        window.location.href = "families/Rossi.html";
+      } else if (user === "Sahlan.GQ" && pass === "Sahlan8182") {
+        window.location.href = "families/Sahlan.html";
+      } else if (user === "ScottN" && pass === "Scott1997") {
+        window.location.href = "families/Scott.html";
+      } else if (user === "Strickler" && pass === "Strickler@1981") {
+        window.location.href = "families/Strickler.html";
+      } else if (user === "SukaliSuz" && pass === "Suk.07") {
+        window.location.href = "families/Sukali.html";
+      } else if (user === "TsurugiRBM" && pass === "RBM.Tsu") {
+        window.location.href = "families/Tsurugi1.html";
+      } else if (user === "TsurugiTRK" && pass === "TRK.Tsu") {
+        window.location.href = "families/Tsurugi2.html";
+      } else if (user === "WendelJo" && pass === "Wendel.J03") {
+        window.location.href = "families/Wendel.html";
+      } else if (user === "Yildizfam" && pass === "Yildiz.1991") {
+        window.location.href = "families/Yildiz.html";
+      } else if (user === "StrayOrphans" && pass === "Stkz124") {
+        window.location.href = "families/Stray Orphans.html";
+      } else if (user === "AdrienAgr" && pass === "AdrAgr1310") {
+        window.location.href = "Individuals/AgresteAdrien.html";
+      } else if (user === "GabeAgreste" && pass === "Emily1976") {
+        window.location.href = "Individuals/AgresteGabriel.html";
+      } else if (user === "LitsaAngel" && pass === "Angel1947") {
+        window.location.href = "Individuals/AngelidiLitsa.html";
+      } else {
+        errorMsg.style.display = "block";
+      }
+    }
+
+    function togglePassword() {
+      const passField = document.getElementById("password");
+      const eyeIcon = document.getElementById("eyeToggle").querySelector("i");
+
+      if (passField.type === "password") {
+        passField.type = "text";
+        eyeIcon.classList.remove("fa-eye-slash");
+        eyeIcon.classList.add("fa-eye");
+      } else {
+        passField.type = "password";
+        eyeIcon.classList.remove("fa-eye");
+        eyeIcon.classList.add("fa-eye-slash");
+      }
+    }
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        login();
+      }
+    });
+  </script>
+</body>
+</html>
